@@ -1,0 +1,198 @@
+print('chapter 8 List')
+# Algorithm: "A set of  rules or steps used to solve a problems"
+# Data Structure: "A particular way of organizing data in a computers"
+print('1. A list is a kind of collection ')
+# e.g. friends = ['Joe', 'Glenn', 'Sally']
+# []: list constent, and seperate by commas ","
+# A list element can be any python object, even another list
+# list can be empty
+print('List contants example')
+print([1, 24, 9]) #one type "int" in the list
+print([12, 'red', [1, 5]]) # mixed three types
+print('#####################################################')
+print('2. List and definaite loops')
+friends = ['Joe', 'Glenn', 'Sally']
+for friend in friends:
+    print('Hello: ', friend)
+print('Done!')
+print('#####################################################')
+print('3. Looking inside lists')
+# we can get any single element in a list by using index: start from 0
+friends = ['Joe', 'Glenn', 'Sally']
+print(friends[2])
+print('#####################################################')
+print('4. lists are mutable: can be change')
+# strings are "immutable" <-- we cannot change the content of a string,
+# we must makea new string to make any changes
+fruit = 'Banana'
+print(fruit)
+x = fruit.lower() # <--it makes a copy of the string
+print(x)
+# Lists are "mutable" <-- we can change a element of a list by its index
+lotto = [12, 26, 41, 28]
+print(lotto)
+lotto[2] = 28
+print(lotto)
+print('#####################################################')
+print('5. The length of the list')
+# The "leng()" function takes a list as a parameter
+# and returns the numbers of elements in the list
+# !! len() tells the numbers of  elements of any set or sequence
+greet ='hello Bob'
+print(len(greet))
+
+x = [1, 2, 'Joe', [4, 6]]
+print(len(x))
+print('#####################################################')
+print('6. Using the "Range" Function')
+# The range function returns a list of numbers that range
+# from zero to one less than the parameter: 0 to (parameter-1)
+# we can construct an index loop using "for and an integer iterator"
+num4 = range(4)
+for i in num4:
+    print(i, end=', ')
+print('Use rang in a loop')
+friends = ['Joe', 'Glenn', 'Sally']
+print(len(friends))
+for i in range(len(friends)):
+    friend = friends[i]
+    print('Hello: ', friend) # <-- within for loop!
+print('####################part2############################')
+print('7. Concatenating lists using "+"')
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = a + b
+print(a, '\n', b, '\n', c, sep='')
+#sep -- 用来间隔多个对象，默认值是一个空格。
+print('####################part2############################')
+print('8. Slicing lists using ":"')
+print('Reminder: the second number is "up to but not inclusing"')
+t = [9, 41, 12, 3 ,74, 15]
+print(t)
+print(t[1:3])
+print(t[:4])
+print(t[3:])
+print('####################part2############################')
+print('9. List Methods')
+# append: adds a new element to the end of a list
+t = ['a', 'b', 'c', 'd', 'e', 'f']
+t[1:3] = ['x', 'y']
+print(t)
+# ['a', 'x', 'y', 'd', 'e', 'f']
+stuff= list()
+stuff.append('book')
+stuff.append(99)
+print(stuff)
+stuff.append([3, 4])
+print(stuff)
+
+# extend: takes a list as an argument and appends all of the elements
+# >>> t1 = ['a', 'b', 'c']
+# >>> t2 = ['d', 'e']
+# >>> t1.extend(t2)
+# >>> print(t1)
+# ['a', 'b', 'c', 'd', 'e']
+# sort :arranges the elements of the list from low to high:
+# >>> t = ['d', 'c', 'e', 'b', 'a']
+# >>> t.sort()
+# >>> print(t)
+# ['a', 'b', 'c', 'd', 'e']
+# pop: delete element by its index, modifies the list and returns the element that was removed
+# >>> t = ['a', 'b', 'c']
+# >>> x = t.pop(1)
+# >>> print(t)
+# ['a', 'c']
+# >>> print(x)
+# b
+# del: delete element by its index
+# >>> t = ['a', 'b', 'c']
+# >>> del t[1]
+# >>> print(t)
+# ['a', 'c']
+# remove: delete by name
+# >>> t = ['a', 'b', 'c']
+# >>> t.remove('b')
+# >>> print(t)
+# ['a', 'c']
+print('####################part2############################')
+print('10. Is something in the list?')
+# Pythonprovies two operators that check if an item is in a list
+# "in" or "not in" & "True" or "false"
+some = [1, 9, 21, 10, 16]
+print('9 in some: ')
+print(9 in some)
+print('15 in some: ')
+print(15 in some)
+print('sort list:')
+friends = ['Joe', 'Glenn', 'Sally']
+print(friends)
+friends. sort()
+print(friends)
+# cannot use print(friends.sort())!!!! output: None
+print('simpler than loop')
+some = [1, 9, 21, 10, 16]
+print(len(some))
+print(max(some))
+# no use of some.max()!!!!!!
+print(min(some))
+print(sum(some))
+print('compare loop and list:')
+# ##########loop#############
+total = 0
+count = 0
+while True:
+    inp = input('Enter a number:')
+    if inp =='none': break
+    val = float(inp)
+    total = total + val
+    count = count + 1
+print('Average: ', total/count)
+# ##########list#############
+numlist = list()
+while True:
+    inp = input('Enter a number:')
+    if inp =='none': break
+    val = float(inp)
+    numlist.append(val)
+print('Ave: ', sum(numlist)/len(numlist))
+# Difference: loop will keep memory of one number,
+# while list keep all numbers in memory before calculation
+print('####################part3############################')
+print('11. String and list')
+print('imortant example:')
+abc = 'With three words'
+stuff = abc.split()
+print(stuff)
+print(len(stuff))
+for i in stuff:
+    print(i)
+print('delimiter: specifies which characters to use as word boundaries'
+      'with no specify of delimiter, multiple spaces treated as one delimiter')
+line1 = 'A        lot            of       spaces'
+etc1= line1.split()
+print(etc1)
+line2 = '1;2;3'
+etc2 = line2.split(';')
+print(etc2)
+print(len(etc2))
+print('#####################################################')
+print('12. parsing lines')
+fhand = open('mbox_short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From '): continue
+    words = line.split()
+    print(words[2])
+print('#####################################################')
+print('13. double split pattern')
+
+fhand = open('mbox_short.txt')
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith('From '): continue
+    words = line.split()
+    email = words[1]
+    pieces = email.split('@')
+    print(pieces)
+
+
